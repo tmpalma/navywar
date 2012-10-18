@@ -1,7 +1,7 @@
 package br.com.crafters.functional;
 
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -22,28 +22,32 @@ public class MontarTabuleiroFunctionalTest {
 	WebDriver driver = null;
 
 	@org.junit.Before
-	public void setup(){
+	public void setup() {
 		driver = new HtmlUnitDriver();
 	}
+
 	@org.junit.After
-	public void teardown(){
+	public void teardown() {
 		driver.close();
 		driver = null;
 	}
+
 	@Test
 	public void verTitulo() {
 		driver.get(URL);
 		WebElement el = driver.findElement(By.cssSelector("body h1"));
 		assertEquals("Navy War", el.getText());
 	}
+
 	@Test
-	public void verTabuleiro6linhas(){
+	public void verTabuleiro6linhas() {
 		get(URL);
 		List<WebElement> els = driver.findElements(By.cssSelector("table tr"));
-		assertEquals(6, els.size());	
+		assertEquals(6, els.size());
 	}
+
 	@Test
-	public void verTabuleiro6linhasCom6Colunas(){
+	public void verTabuleiro6linhasCom6Colunas() {
 		get(URL);
 		List<WebElement> els = driver.findElements(By.cssSelector("table tr"));
 		assertEquals(6, els.size());
@@ -52,22 +56,26 @@ public class MontarTabuleiroFunctionalTest {
 			assertEquals(6, cols.size());
 		}
 	}
+
 	@Test
-	public void verTiposDeNavioParaColocarNoTabuleiro(){
+	public void verTiposDeNavioParaColocarNoTabuleiro() {
 		get(URL);
-		List<WebElement> ships = driver.findElements(By.className("available_ship"));
+		List<WebElement> ships = driver.findElements(By
+				.className("available_ship"));
 		assertEquals(4, ships.size());
 	}
+
 	@Test
-	@Parameters({"cruiser", "airshipcarrier", "destroyer", "submarine"})
-	public void verOsNaviosDisponiveis(String shipName){
+	@Parameters({ "cruiser", "airshipcarrier", "destroyer", "submarine" })
+	public void verOsNaviosDisponiveis(String shipName) {
 		get(URL);
 		WebElement ships = driver.findElement(By.className("available_ships"));
-		WebElement ship = ships.findElement(By.cssSelector("."+ shipName +" img"));
+		WebElement ship = ships.findElement(By.cssSelector("." + shipName
+				+ " img"));
 		assertNotNull(ship);
 	}
-	
-	private void get(String url){
+
+	private void get(String url) {
 		driver.get(url);
 	}
 
