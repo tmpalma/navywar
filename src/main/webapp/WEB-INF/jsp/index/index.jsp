@@ -7,20 +7,38 @@
 <body>
 	<h1>Navy War</h1>
 	
-	<table>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-	</table>
-	
-	<div class="available_ships">
-		<div class="available_ship airshipcarrier"><img /></div>
-		<div class="available_ship destroyer"><img /></div>
-		<div class="available_ship cruiser"><img /></div>
-		<div class="available_ship submarine"><img /></div>
-	</div>
+	<form action="post">
+		<table>
+			<%
+				for(int i = 0; i < 6; i++) {
+					out.println("<tr>");
+			
+					for(int j = 0; j < 6; j++) {
+				    	out.println("<td><input type='checkbox' name='linha" + i + "["+ j + "].tabuleiro'/></td>");
+					}
+					
+					out.println("</tr>");
+				}
+			%>
+		</table>
+		
+		<div>
+			Linha <input type="text" id="linha">
+		
+		</div>
+		
+		<div>
+			Coluna <input type="text" id="coluna">
+		
+		</div>
+		
+		<div class="available_ships">
+			<div class="available_ship airshipcarrier"><input type="radio" id="navio" value="1" /><img src="src/main/webapp/WEB-INF/jsp/index/376.png" /></div>
+			<div class="available_ship destroyer"><input type="radio" id="navio" value="2" /><img src="376.png" /></div>
+			<div class="available_ship cruiser"><input type="radio" id="navio" value="3" /><img src="376.png" /></div>
+			<div class="available_ship submarine"><input type="radio" id="navio" value="4" /><img src="376.png" /></div>
+		</div>
+		<input type="submit" />
+	</form>
 </body>
 </html>
