@@ -1,6 +1,6 @@
 package br.com.crafters.model;
 
-import br.com.crafters.controller.JogoController;
+import br.com.crafters.controller.IndexController;
 
 public class Jogador {
 	private int id;
@@ -8,9 +8,9 @@ public class Jogador {
 	private String msg;
 
 	public void atacar(Integer idAdversario, String msg) {
-		Jogador adversario = JogoController.jogadores.get(idAdversario);
+		Jogador adversario = IndexController.jogadores.get(idAdversario);
 		adversario.setMsg(msg);
-		JogoController.jogadores.put(idAdversario, adversario);
+		IndexController.jogadores.put(idAdversario, adversario);
 	}
 
 	public int getId() {
