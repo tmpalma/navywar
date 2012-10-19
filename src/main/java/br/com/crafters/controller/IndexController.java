@@ -56,7 +56,7 @@ public class IndexController {
 	}
 	
 	@Path("/")
-	@Post
+//	@Post
 	public void index( String linha, String coluna, List<String> tabuleiro ) 
 	{
 		int tamanho = 2;
