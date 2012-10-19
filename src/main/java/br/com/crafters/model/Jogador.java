@@ -1,17 +1,9 @@
 package br.com.crafters.model;
 
-import br.com.crafters.controller.IndexController;
-
 public class Jogador {
 	private int id;
 	private String nome;
-	private String msg;
-
-	public void atacar(Integer idAdversario, String msg) {
-		Jogador adversario = IndexController.jogadores.get(idAdversario);
-		adversario.setMsg(msg);
-		IndexController.jogadores.put(idAdversario, adversario);
-	}
+	private Tabuleiro tabuleiro;
 
 	public int getId() {
 		return id;
@@ -29,12 +21,12 @@ public class Jogador {
 		this.nome = nome;
 	}
 
-	public String getMsg() {
-		return msg;
+	public Tabuleiro getTabuleiro() {
+		return tabuleiro;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setTabuleiro(Tabuleiro tabuleiro) {
+		this.tabuleiro = tabuleiro;
 	}
 
 }
