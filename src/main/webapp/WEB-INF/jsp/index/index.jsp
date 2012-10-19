@@ -7,7 +7,7 @@
 <body>
 	<h1>Navy War</h1>
 	
-	<form action="index" method="POST">
+	<form action="index" method="post">
 		<table>
 			<%
 				for(int i = 0; i < 6; i++) {

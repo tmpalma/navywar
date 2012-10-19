@@ -55,20 +55,10 @@ public class IndexController {
 		// TODO Auto-generated method stub
 	}
 	
-	@Path("/navy/index.jsp")
-	@Post
-	public void addShip()
-	{
-		System.out.println( "addShip" );
-	}
-	
 	@Path("/")
-	//@Post
+	@Post
 	public void index( String linha, String coluna, List<String> tabuleiro ) 
 	{
-		System.out.println( linha );
-		System.out.println( coluna );
-		
 		int tamanho = 2;
 		String orientacao = "H";
 		
@@ -87,7 +77,6 @@ public class IndexController {
 				for ( int i = linhaInicio; i < linhaFim; i++ )
 				{
 					indiceCheck = i + "x" + colunaFim;
-					System.out.println( indiceCheck );
 					lstTabuleiro.add( indiceCheck );
 				}
 			}
