@@ -8,7 +8,7 @@ public class Tabuleiro {
 			Orientacao orientacao) {
 		int tamanho = tipoDoNavio.getTamanhoDoNavio();
 
-		for (int i = 0; i < array.length; i++) {
+		for (int i = 0; i < tamanho; i++) {
 
 		}
 

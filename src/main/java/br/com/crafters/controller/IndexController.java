@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import br.com.caelum.vraptor.Path;
-import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.crafters.model.Ataque;
@@ -75,19 +74,17 @@ public class IndexController {
 	private void verificaFinalizacaoDaPartida() {
 		// TODO Auto-generated method stub
 	}
-
+/*
 	@Path("/navy/index.jsp")
 	@Post
 	public void addShip() {
 		System.out.println("addShip");
 	}
-
+*/
 	@Path("/")
-	// @Post
-	public void index(String linha, String coluna, List<String> tabuleiro) {
-		System.out.println(linha);
-		System.out.println(coluna);
-
+//	@Post
+	public void index( String linha, String coluna, List<String> tabuleiro ) 
+	{
 		int tamanho = 2;
 		String orientacao = "H";
 
@@ -103,7 +100,6 @@ public class IndexController {
 				linhaFim = linhaFim + tamanho;
 				for (int i = linhaInicio; i < linhaFim; i++) {
 					indiceCheck = i + "x" + colunaFim;
-					System.out.println(indiceCheck);
 					lstTabuleiro.add(indiceCheck);
 				}
 			} else if (orientacao.equals("V")) {
