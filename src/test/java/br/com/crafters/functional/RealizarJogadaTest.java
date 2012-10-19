@@ -1,14 +1,12 @@
 package br.com.crafters.functional;
 
-import static org.junit.Assert.fail;
 import junit.framework.Assert;
-
-import br.com.crafters.controller.IndexController;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.crafters.controller.IndexController;
 import br.com.crafters.model.Jogador;
 
 public class RealizarJogadaTest {

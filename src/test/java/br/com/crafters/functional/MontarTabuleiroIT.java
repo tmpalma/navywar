@@ -16,7 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 @RunWith(JUnitParamsRunner.class)
-public class MontarTabuleiroFunctionalTest {
+public class MontarTabuleiroIT {
 
 	private static final String URL = "http://localhost:8080/navy";
 	WebDriver driver = null;

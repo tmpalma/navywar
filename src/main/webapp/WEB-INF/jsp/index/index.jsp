@@ -7,14 +7,14 @@
 <body>
 	<h1>Navy War</h1>
 	
-	<form action="post">
+	<form action="index" method="POST">
 		<table>
 			<%
 				for(int i = 0; i < 6; i++) {
 					out.println("<tr>");
 			
 					for(int j = 0; j < 6; j++) {
-				    	out.println("<td><input type='checkbox' name='linha" + i + "["+ j + "].tabuleiro'/></td>");
+				    	out.println("<td><input type='checkbox' name='tabuleiro' value = '" + i + "x" + j + "'/></td>");
 					}
 					
 					out.println("</tr>");
@@ -23,12 +23,11 @@
 		</table>
 		
 		<div>
-			Linha <input type="text" id="linha">
-		
+			Linha <input type="text" name="linha">
 		</div>
 		
 		<div>
-			Coluna <input type="text" id="coluna">
+			Coluna <input type="text" name="coluna">
 		
 		</div>
 		
@@ -38,7 +37,8 @@
 			<div class="available_ship cruiser"><input type="radio" id="navio" value="3" /><img src="376.png" /></div>
 			<div class="available_ship submarine"><input type="radio" id="navio" value="4" /><img src="376.png" /></div>
 		</div>
-		<input type="submit" />
+		<input type="hidden"  name="_method" value="post" />    
+		<input type="submit" value="Adicionar Navio"/>
 	</form>
 </body>
 </html>
